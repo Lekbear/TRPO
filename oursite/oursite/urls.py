@@ -19,5 +19,6 @@ from django.urls import path,include
 urlpatterns = [
     path('deadlines/', include('deadlines.urls')),
     path('admin/', admin.site.urls),
-    path('', include('mainApp.urls'))
+    path('', include('mainApp.urls')),
+    path('accounts/', include('allauth.urls')) # pip install django-allauth
 ]
