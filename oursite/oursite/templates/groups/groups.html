@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Join to group</title>
+  </head>
+  <body>
+    {% if user.is_authenticated %} #не работает !!!!
+      YES
+    {% else %}
+      <p>Login<a href="/login">Here</a></p>
+    {% endif %}
+  </body>
+</html>
