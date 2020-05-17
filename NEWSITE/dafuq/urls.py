@@ -1,4 +1,4 @@
-"""oursite URL Configuration
+"""dafuq URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.0/topics/http/urls/
@@ -15,18 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from register import views as v
-
 
 urlpatterns = [
-    path('', include('mainApp.urls')),
-    path('deadlines/', include('deadlines.urls')),
     path('admin/', admin.site.urls),
-    #path('', include('mainApp.urls')),
-    path("register/", v.register, name="register"),
-    path('group2/', v.group2, name='group2'),
-    path("groups/",include('groups.urls')),
-    path("registergroup/",include('registergroup.urls')),
-    path('', include("django.contrib.auth.urls")),
-
+    path('', include('login.urls')),
 ]
