@@ -23,6 +23,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('home/', include('mainApp.urls')),
     path("register/", v.register, name="register"),
+    path("groups/",include('groups.urls')),
+    path("registergroup/",include('registergroup.urls')),
     path('', include("django.contrib.auth.urls")),
     path('', v.register, name="login"),
 ]

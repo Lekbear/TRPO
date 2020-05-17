@@ -1,3 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
-# Create your views here.
+
+def index(response):
+    if response.method == "POST":
+        return redirect('/registergroup')
+    else:
+        return render(response, "groups/index.html")
+
+    
