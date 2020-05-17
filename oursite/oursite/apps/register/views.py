@@ -8,11 +8,8 @@ def register(response):
         form = UserCreationForm(response.POST)
         if form.is_valid():
             form.save()
-        return redirect('/groups')
+        return redirect('/')
     else:
         form = UserCreationForm()
 
     return render(response, "register/register.html", {"form":form})
-
-def login(response):
-    return render(request, 'registration/login.html', {"form":form})
