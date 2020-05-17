@@ -71,7 +71,7 @@
 		<div class="d-flex justify-content-center h-100">
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
-					<h3 id="form-title">Регистрация</h3>
+					<h3 id="form-title">REGISTER ACCOUNT</h3>
 				</div>
 				<div class="d-flex justify-content-center form_container">
 
@@ -87,7 +87,7 @@
 							<div class="input-group-append">
 								<span class="input-group-text"><i class="fas fa-envelope-square"></i></span>
 							</div>
-							{{form.email}}
+							<input type="email" name="email">
 						</div>
 						<div class="input-group mb-2">
 							<div class="input-group-append">
@@ -110,7 +110,7 @@
 
 				<div class="mt-4">
 					<div class="d-flex justify-content-center links">
-						 Уже есть аккаунт? <a href="{% url 'login' %}" class="ml-2">Войти</a>
+						Already have an account? <a href="{% url 'login' %}" class="ml-2">Login</a>
 					</div>
 				</div>
 			</div>
@@ -135,3 +135,19 @@
 	</script>
 </body>
 </html>
+
+<form method="post">
+
+  sadad
+  {{form.username.label}}
+
+  <br>
+  {{form.email.label}}
+  {{form.email}}
+  <br>
+  {{form.password1.label}}
+
+  <br>
+  {{form.password2.label}}
+
+</form>

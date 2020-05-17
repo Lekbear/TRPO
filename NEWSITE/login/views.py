@@ -20,8 +20,8 @@ def register(request):
         form = CreateUserForm(request.POST)
         if form.is_valid():
             form.save()
-    conrext = {'form':form}
-    return render(request, 'login/register.html')
+    context = {'form':form}
+    return render(request, 'login/register.html', context)
 
 def timetable(request):
     courses = Course.objects.all()
