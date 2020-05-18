@@ -22,3 +22,12 @@ class Course(models.Model):
 
     def __str__(self):
         return self.name
+
+class deadlines(models.Model):
+    deadlines = models.DateTimeField()
+    name = models.CharField(max_length=250, null=True)
+    description = models.CharField(max_length=250, null=True)
+    subject = models.CharField(max_length=250, null=True)
+    teacher = models.CharField(max_length=150, null=True)    
+    def __str__(self):
+        return self.name
