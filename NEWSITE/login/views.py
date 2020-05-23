@@ -13,7 +13,7 @@ from django.contrib.auth.decorators import login_required
 
 def login(request):
     if request.user.is_authenticated:
-        return redirect('home')
+        return redirect('timetable')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
