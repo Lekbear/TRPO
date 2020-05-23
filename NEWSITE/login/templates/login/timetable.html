@@ -1,15 +1,58 @@
 {% extends 'login/main.html' %}
 
+{% block title %}
+  <title>Расписание</title>
+{% endblock %}
+
 {% block content %}
+
 <table class="table">
   <thead class="thead-dark">
+    <tr>
+      <th colspan="5">Понедельник</th>
+    </tr>
+
+
     <tr>
       <th scope="col">Время</th>
       <th scope="col">Предмет</th>
       <th scope="col">Кабинет</th>
       <th scope="col">Преподаватель</th>
+      <th scope="col">Добавить</th>
     </tr>
   </thead>
+
+  <tbody>
+
+    {% for i in courses %}
+      <tr>
+        <th>{{i.time}}</th>
+        <td>{{i.name}}</td>
+        <td>{{i.room}}</td>
+        <td>{{i.teacher}}</td>
+        <td><a href="#">Изменить</a></td>
+      </tr>
+    {% endfor %}
+
+  </tbody>
+</table>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th colspan="5">Вторник</th>
+    </tr>
+
+
+    <tr>
+      <th scope="col">Время</th>
+      <th scope="col">Предмет</th>
+      <th scope="col">Кабинет</th>
+      <th scope="col">Преподаватель</th>
+      <th scope="col">Добавить</th>
+    </tr>
+  </thead>
+
   <tbody>
 
     {% for i in courses %}
