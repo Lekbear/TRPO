@@ -2,100 +2,56 @@
 
 {% block title %}
   <title>Расписание</title>
+
+  <style media="screen">
+    th {
+      background: #333333;
+      color: #fff;
+      font-size: 17px;
+
+    }
+    .tableboot {
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+    .day {
+
+    }
+  </style>
+
 {% endblock %}
 
 {% block content %}
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th colspan="5">Понедельник</th>
-    </tr>
-
-
-    <tr>
-      <th scope="col">Время</th>
-      <th scope="col">Предмет</th>
-      <th scope="col">Кабинет</th>
-      <th scope="col">Преподаватель</th>
-      <th scope="col">Добавить</th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    {% for i in courses %}
+<div class="tableboot">
+    <table class="table">
       <tr>
-        <th>{{i.time}}</th>
-        <td>{{i.name}}</td>
-        <td>{{i.room}}</td>
-        <td>{{i.teacher}}</td>
-        <td><a href="#">Изменить</a></td>
+        <th colspan="6" class="day">Понедельник</th>
       </tr>
-    {% endfor %}
-
-  </tbody>
-</table>
-
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th colspan="5">Вторник</th>
-    </tr>
-
-
-    <tr>
-      <th scope="col">Время</th>
-      <th scope="col">Предмет</th>
-      <th scope="col">Кабинет</th>
-      <th scope="col">Преподаватель</th>
-      <th scope="col">Добавить</th>
-    </tr>
-  </thead>
-
-  <tbody>
-
-    {% for i in courses %}
       <tr>
-        <th>{{i.time}}</th>
-        <td>{{i.name}}</td>
-        <td>{{i.room}}</td>
-        <td>{{i.teacher}}</td>
-        <td><a href="#">Изменить</a></td>
+        <th scope="col">Время</th>
+        <th scope="col">Предмет</th>
+        <th scope="col">Кабинет</th>
+        <th scope="col">Преподаватель</th>
+        <th scope="col"></th>
+        <th scope="col"></th>
       </tr>
-    {% endfor %}
 
-  </tbody>
-</table>
 
-<table class="table">
-  <thead class="thead-light">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+      {% for i in courses %}
+        <tr>
+          <td>{{i.time}}</td>
+          <td>{{i.name}}</td>
+          <td>{{i.room}}</td>
+          <td>{{i.teacher}}</td>
+          <td><a href="#">Изменить</a></td>
+          <td><a href="#">Удалить</a></td>
+        </tr>
+      {% endfor %}
+
+
+  </table>
+</div>
+
 {% endblock%}
