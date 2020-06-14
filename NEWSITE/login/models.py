@@ -28,6 +28,7 @@ class deadlines(models.Model):
     name = models.CharField(max_length=250, null=True)
     description = models.CharField(max_length=250, null=True)
     subject = models.CharField(max_length=250, null=True)
-    teacher = models.CharField(max_length=150, null=True)    
+    teacher = models.CharField(max_length=150, null=True) 
+    group = models.CharField(max_length=150, null=True) 
     def __str__(self):
         return self.name

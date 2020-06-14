@@ -13,16 +13,24 @@ from django.contrib.auth.decorators import login_required
 
 def login(request):
     if request.user.is_authenticated:
+        # if request.user.groups.exists():
+        #     return redirect('timetable')
+        # else:
+        #     return redirect('groups')
         return redirect('timetable')
     else:
         if request.method == 'POST':
             username = request.POST.get('username')
             password = request.POST.get('password')
-
             user = authenticate(request, username=username, password = password)
+
             if user is not None:
                 djanjologin(request, user)
-                return redirect('timetable')
+                # return redirect('timetable')
+                if request.user.groups.exists():
+                    return redirect('timetable')
+                else:
+                    return redirect('groups')
             else:
                 messages.info(request, 'Логин или пароль введен неверно')
         context = {}
@@ -47,6 +55,16 @@ def register(request):
                 return redirect('login')
         context = {'form':form}
         return render(request, 'login/register.html', context)
+
+@login_required(login_url='login')
+def groups(request):
+    return render(request, 'login/groups.html')
+
+@login_required(login_url='login')
+def create_gp():
+
+    
+    return render(request, 'login/create_gp')
 
 @login_required(login_url='login')
 def home(request):
